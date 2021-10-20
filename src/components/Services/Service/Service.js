@@ -16,7 +16,7 @@ const Service = (props) => {
           <Card.Text>
             {description.slice(0,30)}
           </Card.Text>
-          <Link to={`/apporment/${id}`}><Button variant="light" className="rounded fw-bold">View Details</Button></Link>
+          <Link to={`/apporment/${id}`}><Button variant="outline-success " size="sm" className="rounded fw-bold btn">View Details</Button></Link>
         </Card.Body>
       </Card>
     </Col>

@@ -13,6 +13,21 @@ const Login = () => {
   const location = useLocation();
   const redirect = location?.state?.from || "/home";
 
+  const LoginUser = () =>{
+
+    processLogin()
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+      history.push(redirect)
+      setError('');
+    })
+    .catch(error => {
+      setError(error.message);
+    }) 
+
+  }
+
   
   
     return (

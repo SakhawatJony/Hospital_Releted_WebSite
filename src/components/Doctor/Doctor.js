@@ -1,6 +1,6 @@
-import Button from '@restart/ui/esm/Button';
+
 import React from 'react';
-import { Card, Col, Container } from 'react-bootstrap';
+import { Button, Card, Col, Container } from 'react-bootstrap';
 
 const Doctor = ({doctor}) => {
     const {imges,name,title} = doctor;
@@ -15,7 +15,7 @@ const Doctor = ({doctor}) => {
           <Card.Text>
           <p className="">{title} <span>specialist</span></p>
           </Card.Text>
-          <Button variant="lightgrey" className="rounded fw-bold text-dark bg-warning ">Contact Now</Button>
+          <Button variant="outline-success " size="sm" className="rounded fw-bold btn">Apporment Now</Button>
         </Card.Body>
       </Card>
     </Col>
