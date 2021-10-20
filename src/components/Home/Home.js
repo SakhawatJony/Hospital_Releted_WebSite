@@ -5,6 +5,8 @@ import banner2 from '../../images/header/22223.jpg';
 import banner3 from '../../images/header/666.jpg';
 import Services from '../Services/Services';
 
+
+
 const Home = () => {
     return (
         <div>
@@ -45,7 +47,7 @@ const Home = () => {
   </Carousel.Item>
 </Carousel>
           </div>
-          <Services></Services>
+     <Services></Services>
             
         </div>
     );

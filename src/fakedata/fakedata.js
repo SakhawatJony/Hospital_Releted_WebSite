@@ -1,4 +1,4 @@
-const services = [
+const crouses = [
     {
      id:1, title:"Plastic Surgery",description:" Plastic surgery is a surgical specialty involving the restoration, reconstruction, or alteration of the human body", img:"https://img.emedihealth.com/wp-content/uploads/2020/11/plastic-surgery-pitches-feat-1.jpg",name:"Salma Khutun",imges:"https://i.ibb.co/phDhHZX/ani-kolleshi-7jjn-J-QA9f-Y-unsplash.jpg"
 
@@ -27,3 +27,4 @@ const services = [
 
 
 ]
+

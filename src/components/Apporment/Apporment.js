@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const Apporment = () => {
-    const {Id} = useParams();
+    const {serviceId} = useParams();
     const [crouses,setCrouses] =useState([]);
 
 
@@ -17,7 +17,7 @@ const Apporment = () => {
     },[])
 
 
-    const matchingCrouses = crouses.find(crouse => crouse.id === Number(Id));
+    const matchingCrouses = crouses.find(crouse => crouse.id === Number(serviceId));
 
     return ( 
     <div className="my-4">
