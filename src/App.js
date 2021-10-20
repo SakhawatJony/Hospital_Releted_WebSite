@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer';
 import AuthProvider from './components/AuthProvider/AuthProvider';
 import Register from './components/Register/Register';
 import Contacts from './components/Contacts/Contacts';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -30,9 +31,9 @@ function App() {
           <Route path="/services" >
         <Services></Services>
           </Route>
-          <Route path="/apporment/:serviceId" >
+          <PrivateRoute path="/apporment/:serviceId" >
         <Apporment></Apporment>
-          </Route>
+          </PrivateRoute>
           <Route path="/register" >
            <Register></Register>
           </Route>

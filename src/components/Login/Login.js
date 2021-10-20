@@ -1,15 +1,20 @@
 import { faEnvelope, faLink, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from '@restart/ui/esm/Button';
-import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { Col, Form, FormControl, InputGroup, NavLink, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Col, Form, FormControl, InputGroup, NavLink, Row } from 'react-bootstrap';
+import { Link,useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
-  const { error,handleGoogleSignIn,handleEmailChange,handlePasswordChange,processLogin,handleResetPassword,logOut} = useAuth();
+  const {  error,setError,handleGoogleSignIn,handleEmailChange,handlePasswordChange,processLogin,handleResetPassword,logOut} = useAuth();
+  const history = useHistory();
+
+  const location = useLocation();
+  const redirect = location?.state?.from || "/home";
+
+  
+  
     return (
         <div>
            <div className="text-center my-4">
@@ -17,7 +22,18 @@ const Login = () => {
       <p className=" mt-2">Login Your Email & Password</p>
       <p className="text-danger text-center"></p>
       <div className="w-25 mx-auto">
-        <Form onSubmit={processLogin}>
+        <Form onSubmit={()=>
+      processLogin()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        history.push(redirect)
+        setError('');
+      })
+      .catch(error => {
+        setError(error.message);
+      }) 
+          }>
           <Row>
             <Col className="text-start">
               <Form.Label htmlFor="email" visuallyHidden>
@@ -77,7 +93,18 @@ const Login = () => {
           Are You Register? Creact an Accounts!
         </NavLink>
         <br />
-        <Button  className="btn btn-success" onClick={handleGoogleSignIn} variant="secondary" size="sm">
+        <Button  className="btn btn-success" onClick={()=>
+      handleGoogleSignIn()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        history.push(redirect)
+        setError('');
+      })
+      .catch(error => {
+        setError(error.message);
+      }) 
+          } variant="secondary" size="sm">
       GoogleSingIn
     </Button>
       </p>

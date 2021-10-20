@@ -34,24 +34,14 @@ const googleProvider = new GoogleAuthProvider();
        },[])
 
   const handleGoogleSignIn = () => {
-    signInWithPopup(auth, googleProvider)
-      .then(result => {
-        const user = result.user;
-        console.log(user);
-      })
+  return  signInWithPopup(auth, googleProvider)
+      
   }
 
-  const processLogin =e => {
+  const processLogin = e => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then(result => {
-        const user = result.user;
-        console.log(user);
-        setError('');
-      })
-      .catch(error => {
-        setError(error.message);
-      })
+   return signInWithEmailAndPassword(auth, email, password)
+      
   }
 
   const handleNameChange = e => {
@@ -125,6 +115,7 @@ return{
     password,
     name,
     error,
+    setError,
     handleRegistration,
     handleNameChange,
     handleEmailChange,

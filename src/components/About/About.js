@@ -32,6 +32,7 @@ Expoler Now
             <Row xs={1} md={3} className="g-4 caed-container">   
             {
               doctors.map(doctor=><Doctor
+              key={doctor.id}
               doctor={doctor}
               ></Doctor>)
             }
