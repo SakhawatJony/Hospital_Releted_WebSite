@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
-  const {  error,setError,handleGoogleSignIn,handleEmailChange,handlePasswordChange,processLogin,handleResetPassword,logOut} = useAuth();
+  const { error,setError,handleGoogleSignIn,handleEmailChange,handlePasswordChange,processLogin,handleResetPassword} = useAuth();
   const history = useHistory();
 
   const location = useLocation();

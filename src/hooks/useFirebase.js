@@ -14,6 +14,7 @@ const googleProvider = new GoogleAuthProvider();
   const [user,setUser] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
   
 
     const auth = getAuth();
@@ -27,7 +28,7 @@ const googleProvider = new GoogleAuthProvider();
         setUser({})
     }
 
-    
+    setLoading(false);
         });
         return () => unsubscribe;
        
@@ -40,7 +41,7 @@ const googleProvider = new GoogleAuthProvider();
 
   const processLogin = e => {
     e.preventDefault();
-   return signInWithEmailAndPassword(auth, email, password)
+   return signInWithEmailAndPassword(auth, email, password);
       
   }
 
@@ -111,6 +112,7 @@ const googleProvider = new GoogleAuthProvider();
 
 return{
     user,
+    setUser,
     email,
     password,
     name,
@@ -124,7 +126,8 @@ return{
     handleGoogleSignIn,
     verifyEmail,
     processLogin,
-    logOut
+    logOut,
+    loading
 }
 
 
